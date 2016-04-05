@@ -1,0 +1,13 @@
+${readConcurrency}=2
+${writeConcurrency}=4
+${errorThreshold}=10000
+${select.sql}=select * from student
+${source.db.connection.string}=jdbc:mysql://10.2.117.150:3306/lhotse2?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;rewriteBatchedStatements=true
+${source.db.user}=nest
+${source.db.password}=nest1234
+${hdfs.path}=/tmp/anyloader/test/meizu_muscic_charge_002/data
+${fs.defaultFS}=hdfs://pro-cluster
+${HADOOP_USER_NAME}=hdfs
+${charset.encoding}=UTF-8
+${separator}=\0001
+${ignore.empty.datasource}=false

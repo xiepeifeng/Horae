@@ -1,0 +1,3 @@
+[2016-03-22 17:27:34]-[INFO] connectionString=jdbc:mysql://10.2.117.150:3306/lhotse2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true 
+[2016-03-22 17:27:34]-[INFO] DX Command:[/anyloader//run.sh, /anyloader/nest/MySQL2Hdfs.xml, E:\anyloader\parms\90001\90001_20160321152915.dxctl] 
+[2016-03-22 17:27:34]-[INFO] DX process is running, pid=0 

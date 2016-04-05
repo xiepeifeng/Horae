@@ -1,0 +1,67 @@
+//E:\Study\ProtoBuf\protoc-2.4.1-win32.exe -I=D:\SVN\isd_as_rep\lhotse_proj\base\src\com\tencent\isd\lhotse\ 
+//--java_out=D:\SVN\isd_as_rep\lhotse_proj\base\src 
+//D:\SVN\isd_as_rep\lhotse_proj\base\src\com\tencent\isd\lhotse\lhotse.proto
+package lhotse;
+
+option java_package = "com.tencent.isd.lhotse.proto";
+option java_outer_classname = "LhotseObject";
+
+enum LState{
+	ROUGH = -1;
+	READY = 0;
+	RUNNING = 1;
+	SUCCESSFUL = 2;
+	FAILED = 3;
+	SENTENCED = 4;
+	KILLING = 5;
+	KILLED = 6;
+	HANGED = 7;
+}
+
+enum MessageType{
+	START_RUNNER = 1;
+	REQUEST_TASK = 2;
+	COMMIT_TASK = 3;
+	REQUEST_PARAMETER = 4;
+}
+
+message LServer{
+	required string tag = 1;
+	required string type = 2;
+	required string host = 3;
+	required int32 port = 4;
+	optional string service = 5;
+	required string userName = 6;
+	required string password = 7;
+	optional string userGroup = 8;
+	optional string version = 9;
+}
+
+message LKV{
+	required string key=1;
+	required string value=2;
+}
+
+message LTask {
+	required string id = 1;
+	required int32 type = 2;
+	required int64 curRunDate = 3;
+	required int64 nextRunDate = 4;
+	required LState state = 5;
+	required int32 tries = 6;
+	optional string action = 7;
+	optional string cycleUnit = 8;
+	optional int32 cycleNumber = 9;
+	optional bool redoFlag = 10;
+	optional int32 pollingSeconds = 11; 
+	optional string runtimeId = 12;
+	optional string logDesc = 13;
+	optional string errorMessage = 14;
+	repeated LServer sourceServers = 15;
+	repeated LServer targetServers = 16;
+	repeated LKV extProps = 17;
+}
+
+message LParameters{
+	repeated LKV parameters = 1; 
+}

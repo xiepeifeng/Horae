@@ -1,0 +1,7 @@
+*.iml
+.idea
+target/*
+dependency-reduced-pom.xml
+horae-server/target/*
+horae-agent/target/*
+horae-web/target/*
